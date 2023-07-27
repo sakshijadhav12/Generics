@@ -1,28 +1,44 @@
-﻿namespace Genrics
+﻿using System;
+
+namespace Generics
 {
-    class PrintArray
+    class Program
     {
-        public static void ToPrint<T>(T[] arr)
+        public static int MaximumIntNumber(int firstValue, int secondValue, int thirdValue)
         {
-           foreach(var element in arr)
+            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
+                firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
+                firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
             {
-                Console.WriteLine(element);
+                return firstValue;
             }
-           
+            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0 ||
+                secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0 ||
+                secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
+            {
+                return secondValue;
+            }
+            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0 ||
+                thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(secondValue) > 0 ||
+                thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) >= 0)
+            {
+                return thirdValue;
+            }
+            return Math.Max(Math.Max(firstValue, secondValue), thirdValue);
 
         }
- 
-    }
-    class program
-    {    public static void Main(string[] args)
+
+        static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Genrics");
-            int[] intArray = { 10, 20, 30, 40 };
-            PrintArray.ToPrint<int>(intArray);
-            double[] doubleArray = { 1.5, 2.8, 3.0, 4.0 };
-            PrintArray.ToPrint<double>(doubleArray);
-            char [] charArray = { 'h', 'j', 'k','s'};
-            PrintArray.ToPrint<char>(charArray);
+            Console.WriteLine("Enter first Integer Number");
+            int first =Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter second Integer Number");
+            int second = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter third Integer Number");
+            int third= Convert.ToInt32(Console.ReadLine());
+
+            int maximum = MaximumIntNumber(first, second, third);
+            Console.WriteLine("The maximum value is: " + maximum);
         }
-    }   
+    }
 }
