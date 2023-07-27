@@ -4,7 +4,7 @@ namespace Generics
 {
     class Program
     {
-        public static int MaximumIntNumber(int firstValue, int secondValue, int thirdValue)
+        public static double MaximumIntNumber(double firstValue, double secondValue, double thirdValue)
         {
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
                 firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
@@ -30,14 +30,14 @@ namespace Generics
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter first Integer Number");
-            int first =Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter second Integer Number");
-            int second = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter third Integer Number");
-            int third= Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter first Number");
+            double first =Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter second  Number");
+            double second = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter third Number");
+            double third= Convert.ToDouble(Console.ReadLine());
 
-            int maximum = MaximumIntNumber(first, second, third);
+            double maximum = MaximumIntNumber(first, second, third);
             Console.WriteLine("The maximum value is: " + maximum);
         }
     }
